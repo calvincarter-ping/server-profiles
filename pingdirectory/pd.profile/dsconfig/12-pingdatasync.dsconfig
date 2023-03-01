@@ -1,0 +1,11 @@
+#
+# Ping Data Sync Configuration
+#
+
+dsconfig set-access-control-handler-prop --add global-aci:'(targetattr="*") \
+(version 3.0; acl "Give PingDataSync Access to all to handle syncing between servers"; \
+allow(all) userdn="ldap:///cn=pingdatasync,cn=Root DNs,cn=config";)'
+
+dsconfig set-access-control-handler-prop --add global-aci:'(target="ldap:///cn=config") \
+(version 3.0; acl "Give PingDataSync Access to cn=config"; \
+allow(all) userdn="ldap:///cn=pingdatasync,cn=Root DNs,cn=config";)'
