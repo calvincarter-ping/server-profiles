@@ -8,8 +8,8 @@ allow(all) userdn="ldap:///cn=directory manager,cn=Root DNs,cn=config";)'
 
 dsconfig set-access-control-handler-prop --add global-aci:'(target="ldap:///cn=config")(targetscope="subtree")(targetattr="*||+") \
 (version 3.0; acl "Give PingDataSync Access to cn=config"; \
-allow(read,search,compare) userdn="ldap:///cn=directory manager,cn=Root DNs,cn=config";)'
+allow(all) userdn="ldap:///cn=directory manager,cn=Root DNs,cn=config";)'
 
 dsconfig set-access-control-handler-prop --add global-aci:'(target="ldap:///cn=Tasks")(targetscope="subtree")(targetattr="*||+") \
 (version 3.0; acl "Give PingDataSync Access to cn=Tasks"; \
-allow(read,search,compare) userdn="ldap:///cn=directory manager,cn=Root DNs,cn=config";)'
+allow(all) userdn="ldap:///cn=directory manager,cn=Root DNs,cn=config";)'
